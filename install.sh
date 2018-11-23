@@ -172,25 +172,20 @@ echo "done"
 
 
 #------------------------------------------------------
-echo "installing bash aliases from zk-dev-profile"
-if [ ! -d ~/zk-scripts/zk-profile ]; then
-    mkdir ~/zk-scripts/zk-profile
-fi
-
-cd ~/zk-scripts/zk-profile
-
-if [ ! -d ~/zk-scripts/zk-profile/dev-profile ]; then
+echo "installing bash aliases from dev-profile"
+cd ~/zk-scripts
+if [ ! -d ~/zk-scripts/dev-profile ]; then
     git clone https://github.com/dropocol/dev-profile.git
-    cd ~/zk-scripts/zk-profile/dev-profile
+    cd ~/zk-scripts/dev-profile
 else
-    cd ~/zk-scripts/zk-profile/dev-profile
+    cd ~/zk-scripts/dev-profile
     git stash
     git stash clear
     git pull
 fi
 
-if ! grep -F "source ~/zk-scripts/zk-profile/dev-profile/.dev-profile" ~/.bashrc ; then
- echo 'source ~/zk-scripts/zk-profile/dev-profile/.dev-profile' >> ~/.bashrc
+if ! grep -F "source ~/zk-scripts/dev-profile/.dev-profile" ~/.bashrc ; then
+ echo 'source ~/zk-scripts/dev-profile/.dev-profile' >> ~/.bashrc
 fi
 . ~/.bashrc
 
