@@ -33,23 +33,23 @@ fi
 
 
 
-#------------------------------------------------------
-echo "installing bash aliases from dev-profile"
-cd ~/zk-scripts
-if [ ! -d ~/zk-scripts/dev-profile ]; then
-    git clone https://github.com/dropocol/dev-profile.git
-    cd ~/zk-scripts/dev-profile
-else
-    cd ~/zk-scripts/dev-profile
-    git stash
-    git stash clear
-    git pull
-fi
+# #------------------------------------------------------
+# echo "installing bash aliases from dev-profile"
+# cd ~/zk-scripts
+# if [ ! -d ~/zk-scripts/dev-profile ]; then
+#     git clone https://github.com/dropocol/dev-profile.git
+#     cd ~/zk-scripts/dev-profile
+# else
+#     cd ~/zk-scripts/dev-profile
+#     git stash
+#     git stash clear
+#     git pull
+# fi
 
-if ! grep -F "source ~/zk-scripts/dev-profile/.dev-profile" ~/.bashrc ; then
- echo 'source ~/zk-scripts/dev-profile/.dev-profile' >> ~/.bashrc
-fi
-. ~/.bashrc
+# if ! grep -F "source ~/zk-scripts/dev-profile/.dev-profile" ~/.bashrc ; then
+#  echo 'source ~/zk-scripts/dev-profile/.dev-profile' >> ~/.bashrc
+# fi
+# . ~/.bashrc
 
 
 
@@ -194,6 +194,6 @@ echo "done"
 
 
 #------------------------------------------------------
-
+. ~/.bashrc
 cd ~/tools/
 echo "done"
