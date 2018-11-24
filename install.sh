@@ -166,7 +166,7 @@ sudo sh get-docker.sh
 sudo usermod -aG docker $USER
 sudo service docker stop
 sudo echo "{ \"graph\" : \"/home/zeeshankhan/docker\"  }" | sudo tee --append /etc/docker/daemon.json > /dev/null
-sudo ystemctl daemon-reload
+sudo systemctl daemon-reload
 echo "done"
 
 
